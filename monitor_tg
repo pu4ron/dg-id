@@ -1,0 +1,550 @@
+#!/bin/bash
+#
+################################################
+#                                              #
+#        Por: Ronualdo JSA - PU4RON            #
+#                                              #
+#            Janauba/MG - Brasil               #
+#                                              #
+################################################
+#
+
+CALL=$(grep -m 1 'Callsign=' /etc/mmdvmhost | awk  -F "=" '/Callsign/ {print $2}')
+
+sysopCallsign=${CALL}
+
+Log="/var/log/pi-star/MMDVM"
+
+id1=7777701
+id2=7777702
+id3=7777703
+id4=7777704
+id5=7777705
+id6=7777706
+id7=7777707
+id8=7777708
+id9=7777709
+id10=7777710
+id11=7777711
+id12=7777712
+id13=7777713
+id14=7777714
+id15=7777715
+id16=7777716
+id17=7777717
+id18=7777718
+id19=7777719
+id20=7777720
+id21=7777721
+id22=7777722
+id23=7777723
+id24=7777724
+id25=7777725
+id26=7777726
+id27=7777727
+id28=7777728
+id29=7777729
+id30=7777730
+id31=7777731
+id32=7777732
+id33=7777733
+id34=7777734
+id35=7777735
+id36=7777736
+id37=7777737
+id38=7777738
+id39=7777739
+id40=7777740
+id41=7777741
+id42=7777742
+id43=7777743
+id44=7777744
+id45=7777745
+id46=7777746
+id47=7777747
+id48=7777748
+id49=7777749
+id50=7777750
+id51=7777751
+id52=7777752
+id53=7777753
+id54=7777754
+id55=7777755
+id56=7777756
+id57=7777757
+id58=7777758
+id59=7777759
+id60=7777760
+id61=7777761
+id62=7777762
+id63=7777763
+id64=7777764
+id65=7777765
+id66=7777766
+id67=7777767
+id68=7777768
+id69=7777769
+id70=7777770
+id71=7777771
+id72=7777772
+id73=7777773
+id74=7777774
+id75=7777775
+id76=7777776
+id77=7777777
+id78=7777778
+id79=7777779
+id80=7777780
+id81=7777781
+id82=7777782
+id83=7777783
+id84=7777784
+id85=7777785
+id86=7777786
+id87=7777787
+id88=7777788
+id89=7777789
+id90=7777790
+id91=7777791
+id92=7777792
+id93=7777793
+id94=7777794
+id95=7777795
+id96=7777796
+id97=7777797
+id98=7777798
+id99=7777799
+id0=7777700
+
+while true 
+do
+	pu4ron=$(date -u +%Y-%m-%d)
+	if [ "$pu4ron" != "$dados" ]
+	then
+		kill $tailPID 2>/dev/null
+		dados=$pu4ron
+		arqLog=$Log-$dados.log
+
+		tail -n 0 -F $arqLog | while read line 
+		do
+		
+			foo=$(echo $line | grep "received RF voice header from $sysopCallsign to TG")
+
+			if [ $? = 0 ]
+			then
+				TG=$(echo $line | sed "s/.*TG\(.*\)$/\1/g")
+
+		
+				if [ $TG == $id1 ]  
+				then
+                                        /usr/local/sbin/dg-id 1 >/dev/null 2>&1
+
+				elif [ $TG == $id2 ] 
+				then
+                                        /usr/local/sbin/dg-id 2 >/dev/null 2>&1
+
+				elif [ $TG == $id3 ] 
+				then
+                                        /usr/local/sbin/dg-id 3 >/dev/null 2>&1
+
+				elif [ $TG == $id4 ] 
+				then
+                                        /usr/local/sbin/dg-id 4 >/dev/null 2>&1
+
+				elif [ $TG == $id5 ] 
+				then
+                                        /usr/local/sbin/dg-id 5 >/dev/null 2>&1
+
+				elif [ $TG == $id6 ] 
+				then
+                                        /usr/local/sbin/dg-id 6 >/dev/null 2>&1
+
+				elif [ $TG == $id7 ] 
+				then
+                                        /usr/local/sbin/dg-id 7 >/dev/null 2>&1
+
+				elif [ $TG == $id8 ] 
+				then
+                                        /usr/local/sbin/dg-id 8 >/dev/null 2>&1
+
+				elif [ $TG == $id9 ] 
+				then
+                                        /usr/local/sbin/dg-id 9 >/dev/null 2>&1
+
+				elif [ $TG == $id10 ] 
+				then
+                                        /usr/local/sbin/dg-id 10 >/dev/null 2>&1
+
+				elif [ $TG == $id11 ] 
+				then
+                                        /usr/local/sbin/dg-id 11 >/dev/null 2>&1
+
+				elif [ $TG == $id12 ] 
+				then
+                                        /usr/local/sbin/dg-id 12 >/dev/null 2>&1
+
+				elif [ $TG == $id13 ] 
+				then
+                                        /usr/local/sbin/dg-id 13 >/dev/null 2>&1
+
+				elif [ $TG == $id14 ] 
+				then
+                                        /usr/local/sbin/dg-id 14 >/dev/null 2>&1
+
+				elif [ $TG == $id15 ] 
+				then
+                                        /usr/local/sbin/dg-id 15 >/dev/null 2>&1
+
+				elif [ $TG == $id16 ] 
+				then
+                                        /usr/local/sbin/dg-id 16 >/dev/null 2>&1
+
+				elif [ $TG == $id17 ] 
+				then
+                                        /usr/local/sbin/dg-id 17 >/dev/null 2>&1
+
+				elif [ $TG == $id18 ] 
+				then
+                                        /usr/local/sbin/dg-id 18 >/dev/null 2>&1
+
+				elif [ $TG == $id19 ] 
+				then
+                                        /usr/local/sbin/dg-id 19 >/dev/null 2>&1
+
+				elif [ $TG == $id20 ] 
+				then
+                                        /usr/local/sbin/dg-id 20 >/dev/null 2>&1
+
+				elif [ $TG == $id21 ] 
+				then
+                                        /usr/local/sbin/dg-id 21 >/dev/null 2>&1
+
+				elif [ $TG == $id22 ] 
+				then
+                                        /usr/local/sbin/dg-id 22 >/dev/null 2>&1
+
+				elif [ $TG == $id23 ] 
+				then
+                                        /usr/local/sbin/dg-id 23 >/dev/null 2>&1
+
+				elif [ $TG == $id24 ] 
+				then
+                                        /usr/local/sbin/dg-id 24 >/dev/null 2>&1
+
+				elif [ $TG == $id25 ] 
+				then
+                                        /usr/local/sbin/dg-id 25 >/dev/null 2>&1
+
+				elif [ $TG == $id26 ] 
+				then
+                                        /usr/local/sbin/dg-id 26 >/dev/null 2>&1
+
+				elif [ $TG == $id27 ] 
+				then
+                                        /usr/local/sbin/dg-id 27 >/dev/null 2>&1
+
+				elif [ $TG == $id28 ] 
+				then
+                                        /usr/local/sbin/dg-id 28 >/dev/null 2>&1
+
+				elif [ $TG == $id29 ] 
+				then
+                                        /usr/local/sbin/dg-id 29 >/dev/null 2>&1
+
+
+				elif [ $TG == $id30 ] 
+				then
+                                        /usr/local/sbin/dg-id 30 >/dev/null 2>&1
+
+				elif [ $TG == $id31 ] 
+				then
+                                        /usr/local/sbin/dg-id 31 >/dev/null 2>&1
+
+				elif [ $TG == $id32 ] 
+				then
+                                        /usr/local/sbin/dg-id 32 >/dev/null 2>&1
+
+				elif [ $TG == $id33 ] 
+				then
+                                        /usr/local/sbin/dg-id 33 >/dev/null 2>&1
+
+				elif [ $TG == $id34 ] 
+				then
+                                        /usr/local/sbin/dg-id 34 >/dev/null 2>&1
+
+				elif [ $TG == $id35 ] 
+				then
+                                        /usr/local/sbin/dg-id 35 >/dev/null 2>&1
+
+				elif [ $TG == $id36 ] 
+				then
+                                        /usr/local/sbin/dg-id 36 >/dev/null 2>&1
+
+				elif [ $TG == $id37 ] 
+				then
+                                        /usr/local/sbin/dg-id 37 >/dev/null 2>&1
+
+				elif [ $TG == $id38 ] 
+				then
+                                        /usr/local/sbin/dg-id 38 >/dev/null 2>&1
+
+				elif [ $TG == $id39 ] 
+				then
+                                        /usr/local/sbin/dg-id 39 >/dev/null 2>&1
+
+				elif [ $TG == $id40 ] 
+				then
+                                        /usr/local/sbin/dg-id 40 >/dev/null 2>&1
+
+				elif [ $TG == $id41 ] 
+				then
+                                        /usr/local/sbin/dg-id 41 >/dev/null 2>&1
+
+				elif [ $TG == $id42 ] 
+				then
+                                        /usr/local/sbin/dg-id 42 >/dev/null 2>&1
+
+				elif [ $TG == $id43 ] 
+				then
+                                        /usr/local/sbin/dg-id 43 >/dev/null 2>&1
+
+				elif [ $TG == $id44 ] 
+				then
+                                        /usr/local/sbin/dg-id 44 >/dev/null 2>&1
+
+				elif [ $TG == $id45 ] 
+				then
+                                        /usr/local/sbin/dg-id 45 >/dev/null 2>&1
+
+				elif [ $TG == $id46 ] 
+				then
+                                        /usr/local/sbin/dg-id 46 >/dev/null 2>&1
+
+				elif [ $TG == $id47 ] 
+				then
+                                        /usr/local/sbin/dg-id 47 >/dev/null 2>&1
+
+				elif [ $TG == $id48 ] 
+				then
+                                        /usr/local/sbin/dg-id 48 >/dev/null 2>&1
+
+				elif [ $TG == $id49 ] 
+				then
+                                        /usr/local/sbin/dg-id 49 >/dev/null 2>&1
+
+				elif [ $TG == $id50 ] 
+				then
+                                        /usr/local/sbin/dg-id 50 >/dev/null 2>&1
+
+				elif [ $TG == $id51 ] 
+				then
+                                        /usr/local/sbin/dg-id 51 >/dev/null 2>&1
+
+				elif [ $TG == $id52 ] 
+				then
+                                        /usr/local/sbin/dg-id 52 >/dev/null 2>&1
+
+				elif [ $TG == $id53 ] 
+				then
+                                        /usr/local/sbin/dg-id 53 >/dev/null 2>&1
+
+				elif [ $TG == $id54 ] 
+				then
+                                        /usr/local/sbin/dg-id 54 >/dev/null 2>&1
+
+				elif [ $TG == $id55 ] 
+				then
+                                        /usr/local/sbin/dg-id 55 >/dev/null 2>&1
+
+				elif [ $TG == $id56 ] 
+				then
+                                        /usr/local/sbin/dg-id 56 >/dev/null 2>&1
+
+				elif [ $TG == $id57 ] 
+				then
+                                        /usr/local/sbin/dg-id 57 >/dev/null 2>&1
+
+				elif [ $TG == $id58 ] 
+				then
+                                        /usr/local/sbin/dg-id 58 >/dev/null 2>&1
+
+				elif [ $TG == $id59 ] 
+				then
+                                        /usr/local/sbin/dg-id 59 >/dev/null 2>&1
+
+				elif [ $TG == $id60 ] 
+				then
+                                        /usr/local/sbin/dg-id 60 >/dev/null 2>&1
+
+				elif [ $TG == $id61 ] 
+				then
+                                        /usr/local/sbin/dg-id 61 >/dev/null 2>&1
+
+				elif [ $TG == $id62 ] 
+				then
+                                        /usr/local/sbin/dg-id 62 >/dev/null 2>&1
+
+				elif [ $TG == $id63 ] 
+				then
+                                        /usr/local/sbin/dg-id 63 >/dev/null 2>&1
+
+				elif [ $TG == $id64 ] 
+				then
+                                        /usr/local/sbin/dg-id 64 >/dev/null 2>&1
+
+				elif [ $TG == $id65 ] 
+				then
+                                        /usr/local/sbin/dg-id 65 >/dev/null 2>&1
+
+				elif [ $TG == $id66 ] 
+				then
+                                        /usr/local/sbin/dg-id 66 >/dev/null 2>&1
+
+				elif [ $TG == $id67 ] 
+				then
+                                        /usr/local/sbin/dg-id 67 >/dev/null 2>&1
+
+				elif [ $TG == $id68 ] 
+				then
+                                        /usr/local/sbin/dg-id 68 >/dev/null 2>&1
+
+				elif [ $TG == $id69 ] 
+				then
+                                        /usr/local/sbin/dg-id 69 >/dev/null 2>&1
+
+				elif [ $TG == $id70 ] 
+				then
+                                        /usr/local/sbin/dg-id 70 >/dev/null 2>&1
+
+				elif [ $TG == $id71 ] 
+				then
+                                        /usr/local/sbin/dg-id 71 >/dev/null 2>&1
+
+				elif [ $TG == $id72 ] 
+				then
+                                        /usr/local/sbin/dg-id 72 >/dev/null 2>&1
+
+				elif [ $TG == $id73 ] 
+				then
+                                        /usr/local/sbin/dg-id 73 >/dev/null 2>&1
+
+				elif [ $TG == $id74 ] 
+				then
+                                        /usr/local/sbin/dg-id 74 >/dev/null 2>&1
+
+				elif [ $TG == $id75 ] 
+				then
+                                        /usr/local/sbin/dg-id 75 >/dev/null 2>&1
+
+				elif [ $TG == $id76 ] 
+				then
+                                        /usr/local/sbin/dg-id 76 >/dev/null 2>&1
+
+				elif [ $TG == $id77 ] 
+				then
+                                        /usr/local/sbin/dg-id 77 >/dev/null 2>&1
+
+				elif [ $TG == $id78 ] 
+				then
+                                        /usr/local/sbin/dg-id 78 >/dev/null 2>&1
+
+				elif [ $TG == $id79 ] 
+				then
+                                        /usr/local/sbin/dg-id 79 >/dev/null 2>&1
+
+				elif [ $TG == $id80 ] 
+				then
+                                        /usr/local/sbin/dg-id 80 >/dev/null 2>&1
+
+				elif [ $TG == $id81 ] 
+				then
+                                        /usr/local/sbin/dg-id 81 >/dev/null 2>&1
+
+				elif [ $TG == $id82 ] 
+				then
+                                        /usr/local/sbin/dg-id 82 >/dev/null 2>&1
+
+				elif [ $TG == $id83 ] 
+				then
+                                        /usr/local/sbin/dg-id 83 >/dev/null 2>&1
+
+				elif [ $TG == $id84 ] 
+				then
+                                        /usr/local/sbin/dg-id 84 >/dev/null 2>&1
+
+				elif [ $TG == $id85 ] 
+				then
+                                        /usr/local/sbin/dg-id 85 >/dev/null 2>&1
+
+				elif [ $TG == $id86 ] 
+				then
+                                        /usr/local/sbin/dg-id 86 >/dev/null 2>&1
+
+				elif [ $TG == $id87 ] 
+				then
+                                        /usr/local/sbin/dg-id 87 >/dev/null 2>&1
+
+				elif [ $TG == $id88 ] 
+				then
+                                        /usr/local/sbin/dg-id 88 >/dev/null 2>&1
+
+				elif [ $TG == $id89 ] 
+				then
+                                        /usr/local/sbin/dg-id 89 >/dev/null 2>&1
+
+				elif [ $TG == $id90 ] 
+				then
+                                        /usr/local/sbin/dg-id 90 >/dev/null 2>&1
+
+				elif [ $TG == $id91 ] 
+				then
+                                        /usr/local/sbin/dg-id 91 >/dev/null 2>&1
+
+				elif [ $TG == $id92 ] 
+				then
+                                        /usr/local/sbin/dg-id 92 >/dev/null 2>&1
+
+				elif [ $TG == $id93 ] 
+				then
+                                        /usr/local/sbin/dg-id 93 >/dev/null 2>&1
+
+				elif [ $TG == $id94 ] 
+				then
+                                        /usr/local/sbin/dg-id 94 >/dev/null 2>&1
+
+				elif [ $TG == $id95 ] 
+				then
+                                        /usr/local/sbin/dg-id 95 >/dev/null 2>&1
+
+				elif [ $TG == $id96 ] 
+				then
+                                        /usr/local/sbin/dg-id 96 >/dev/null 2>&1
+
+				elif [ $TG == $id97 ] 
+				then
+                                        /usr/local/sbin/dg-id 97 >/dev/null 2>&1
+
+				elif [ $TG == $id98 ] 
+				then
+                                        /usr/local/sbin/dg-id 98 >/dev/null 2>&1
+
+				elif [ $TG == $id99 ] 
+				then
+                                        /usr/local/sbin/dg-id 99 >/dev/null 2>&1
+
+				elif [ $TG == $id0 ] 
+				then
+                                        /usr/local/sbin/dg-id 0 >/dev/null 2>&1
+
+
+		                else 
+			        continue
+
+
+				fi
+			fi	
+		done 
+		tailPID=$(($! - 1)) 
+	fi
+	sleep 1 
+done

@@ -1,0 +1,15 @@
+[Unit]
+Description=DGid Service
+Afer=network.target sound.target
+
+[Service]
+Type=simple
+Restart=on-failure
+User=root
+Group=root
+StandardOutput=null
+WorkingDirectory=/usr/local/sbin
+ExecStart=/usr/local/sbin/monitor_tg
+
+[Install]
+WantedBy=multi-user.target

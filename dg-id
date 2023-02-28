@@ -1,0 +1,143 @@
+#!/bin/bash
+#
+################################################
+#                                              #
+#        Por: Ronualdo JSA - PU4RON            #
+#                                              #
+#            Janauba/MG - Brasil               #
+#                                              #
+################################################
+#
+
+indcMMDVM=$(grep -m 1 'Callsign=' /etc/mmdvmhost | awk  -F "=" '/Callsign/ {print $2}')
+
+port=$(egrep -A 3 '\[YSF Network\]' "/etc/ysfgateway" | grep "Port=" | cut -c 1-50 | cut -c 6-11)
+
+
+soft(){
+	
+	pu4ron=${1}
+	sudo systemctl ${pu4ron} ysfgateway.service > /dev/null 2>&1
+	sudo systemctl ${pu4ron} dmr2ysf.service > /dev/null 2>&1
+        sudo mount -o remount,ro /
+
+	}
+
+
+if [ -z "$1" ]; then
+
+      relink=""
+else
+      relink=${1}
+fi
+
+out=$( echo "$relink" | cut -c 1-2)
+case ${1} in
+
+
+*) 
+
+sudo mount -o remount,rw /
+
+if [ ${out} = "0" ]; then 
+
+
+    echo -e "RJS: \033[00;33mDG-ID: default \033[00;33m"
+
+    sudo sed -i "s/Callsign=.*/Callsign=${indcMMDVM}"/  /etc/ysfgateway
+    sudo sed -i "/\[YSF Network\]/{n;n;s/Port=.*/Port=42000/}" /etc/ysfgateway
+    soft restart
+
+    exit 0
+
+else
+
+    dgid=${out}
+
+    echo -e "RJS: \033[00;33mDG-ID:${dgid} \033[00;33m"
+
+    sudo sed -i "/\[General\]/{n;s/Callsign=.*/Callsign=$indcMMDVM-$dgid/}" /etc/ysfgateway
+
+
+
+   if [ ${dgid} = "1" ]; then
+
+      sudo sed -i "/\[YSF Network\]/{n;n;s/Port=.*/Port=42501/}" /etc/ysfgateway
+      soft restart
+      exit 0
+   fi
+
+
+   if [ ${dgid} = "2" ]; then
+
+      sudo sed -i "/\[YSF Network\]/{n;n;s/Port=.*/Port=42502/}" /etc/ysfgateway
+      soft restart
+      exit 0
+   fi
+
+
+   if [ ${dgid} = "3" ]; then
+
+      sudo sed -i "/\[YSF Network\]/{n;n;s/Port=.*/Port=42503/}" /etc/ysfgateway
+      soft restart 
+      exit 0
+   fi
+
+
+   if [ ${dgid} = "4" ]; then
+
+      sudo sed -i "/\[YSF Network\]/{n;n;s/Port=.*/Port=42504/}" /etc/ysfgateway
+      soft restart
+      exit 0
+   fi
+
+
+   if [ ${dgid} = "5" ]; then
+
+      sudo sed -i "/\[YSF Network\]/{n;n;s/Port=.*/Port=42505/}" /etc/ysfgateway
+      soft restart
+      exit 0
+   fi
+
+
+   if [ ${dgid} = "6" ]; then
+
+      sudo sed -i "/\[YSF Network\]/{n;n;s/Port=.*/Port=42506/}" /etc/ysfgateway
+      soft restart
+      exit 0
+   fi
+
+
+   if [ ${dgid} = "7" ]; then
+
+      sudo sed -i "/\[YSF Network\]/{n;n;s/Port=.*/Port=42507/}" /etc/ysfgateway
+      soft restart
+      exit 0
+   fi
+
+
+   if [ ${dgid} = "8" ]; then
+
+      sudo sed -i "/\[YSF Network\]/{n;n;s/Port=.*/Port=42508/}" /etc/ysfgateway
+      soft restart
+      exit 0
+   fi
+
+
+   if [ ${dgid} = "9" ]; then
+
+      sudo sed -i "/\[YSF Network\]/{n;n;s/Port=.*/Port=42509/}" /etc/ysfgateway
+      soft restart
+      exit 0
+   fi
+
+
+    sudo sed -i "/\[YSF Network\]/{n;n;s/Port=.*/Port=425$dgid/}" /etc/ysfgateway
+    soft restart
+  
+
+fi
+exit 0
+;;
+esac
+exit 0
