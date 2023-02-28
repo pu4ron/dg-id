@@ -31,7 +31,7 @@ case "$REPLY" in
     * ) exit 0 ;;   
 esac
 echo ""
-mount -o remount,rw /
+mount -o remount,rw /  > /dev/null 2>&1
 
 echo ""
 echo "* Estruturando, adicionando e ativando as ferramentas..."
@@ -70,19 +70,22 @@ else
  fi
 
 
-if [ -f "$service" ]; then                                          
+if [ -f "$service" ]; then
+   sudo systemctl stop dg_id.service > /dev/null 2>&1
+   sleep 2
+   sudo systemctl disable dg_id.service > /dev/null 2>&1
    sudo rm ${service}
    sudo cp /home/pi-star/dg-id/dg_id.service  $service
    sudo chmod 777 $service
-   sudo systemctl enable dg_id.service
+   sudo systemctl enable dg_id.service > /dev/null 2>&1
    sleep 2
-   sudo systemctl start dg_id.service
+   sudo systemctl start dg_id.service > /dev/null 2>&1
 else
    sudo cp /home/pi-star/dg-id/dg_id.service  $service
    sudo chmod 777 $service
-   sudo systemctl enable dg_id.service
+   sudo systemctl enable dg_id.service > /dev/null 2>&1
    sleep 2
-   sudo systemctl start dg_id.service
+   sudo systemctl start dg_id.service > /dev/null 2>&1
  fi
 
 
@@ -90,6 +93,6 @@ echo -e "* \033[01;32mFim! \033[01;37m"
 sleep 2
 echo ""
 
-mount -o remount,ro /
+mount -o remount,ro /  > /dev/null 2>&1
 cd /home/pi-star
 sudo rm -R /home/pi-star/dg-id
