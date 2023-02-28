@@ -41,7 +41,7 @@ sleep 2
 dgid="/usr/local/sbin/dg-id"
 monitor="/usr/local/sbin/monitor_tg"
 diretorio="/home/pi-star/dg-id"
-service="/lib/systemd/system/dg-id.service"
+service="/lib/systemd/system/dg_id.service"
 
 
 if [ -f "$dgid" ]; then                                          
@@ -72,13 +72,13 @@ else
 
 if [ -f "$service" ]; then                                          
    sudo rm ${service}
-   sudo cp /home/pi-star/dg-id/dg-id.service  $service
+   sudo cp /home/pi-star/dg-id/dg_id.service  $service
    sudo chmod 777 $service
    sudo systemctl enable dg_id.service
    sleep 2
    sudo systemctl start dg_id.service
 else
-   sudo cp /home/pi-star/dg-id/dg-id.service  $service
+   sudo cp /home/pi-star/dg-id/dg_id.service  $service
    sudo chmod 777 $service
    sudo systemctl enable dg_id.service
    sleep 2
