@@ -29,3 +29,7 @@ Script que ativa a função DG-ID para rádios DMR no PI-STAR, capacitando-os a 
 * sudo dg-id 2  = DG-ID 02
 * sudo dg-id 30 = DG-ID 30
 * sudo dg-id 88 = DG-ID 88
+
+# ________________________
+*** Uma portador (PTT) de 2s para selecionar o dg-id em seguida retornar ao id do refletor para QSO.
+*** Obs: DMRGateway [ 70 + 77777 + dg-id ]
