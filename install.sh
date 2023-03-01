@@ -93,6 +93,8 @@ echo -e "* \033[01;32mFim! \033[01;37m"
 sleep 2
 echo ""
 
-mount -o remount,ro /  > /dev/null 2>&1
 cd /home/pi-star
+sudo chmod 777 -R /home/pi-star/dg-id
+sudo chmod 777 -R /home/pi-star/dg-id/*
 sudo rm -R /home/pi-star/dg-id
+mount -o remount,ro /  > /dev/null 2>&1
