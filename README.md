@@ -22,3 +22,9 @@ Script que ativa a função DG-ID para rádios DMR no PI-STAR, capacitando-os a 
 *  TG 7777702  = DG-ID 02
 *  TG 7777750  = DG-ID 50
 *  TG 7777788  = DG-ID 88
+
+* [ SSH ]
+
+* sudo dg-id 1  = DG-ID 01
+* sudo dg-id 30 = DG-ID 30
+* sudo dg-id 88 = DG-ID 88
