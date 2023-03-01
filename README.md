@@ -1,6 +1,6 @@
-# [ PU4RON Ronualdo ]
+# [ PU4RON RONUALDO ]
 
-# dg-id
+# pYSF3 C4FM multi streams - DG-ID
 Script que ativa a função DG-ID para rádios DMR no PI-STAR, capacitando-os a usar os refletores pYSF3 c4fm multi streams por meio de TGs configurados. 
 
 
