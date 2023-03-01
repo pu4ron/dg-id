@@ -31,7 +31,7 @@ case "$REPLY" in
     * ) exit 0 ;;   
 esac
 echo ""
-mount -o remount,rw /  > /dev/null 2>&1
+mount -o remount,rw /  >/dev/null 2>&1
 
 echo ""
 echo "* Estruturando, adicionando e ativando as ferramentas..."
@@ -94,7 +94,7 @@ sleep 2
 echo ""
 
 cd /home/pi-star
-sudo chmod 777 -R /home/pi-star/dg-id
-sudo chmod 777 -R /home/pi-star/dg-id/*
+sudo chmod 777 /home/pi-star/dg-id
+sudo chmod 777 /home/pi-star/dg-id/*
 sudo rm -R /home/pi-star/dg-id
-mount -o remount,ro /  > /dev/null 2>&1
+mount -o remount,ro /  >/dev/null 2>&1
