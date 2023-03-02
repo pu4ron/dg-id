@@ -2,7 +2,7 @@
 
 
 # pYSF3 C4FM multi streams DG-ID
-Script cuja a função é adicionar, ativar e fazer controle de DG-ID(s) de refletores pYSF3 multi streams usando rádios DMR via PI-STAR; Todas as ações são por meio de TGs pré-configurados ou ssh. 
+Script cuja a função é adicionar, ativar e fazer controle de DG-ID(s) de refletores pYSF3 multi streams usando rádios DMR via PI-STAR; Todas as ações são validadas por meio de TGs pré-configurados ou ssh. 
 
 
 # Install
