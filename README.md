@@ -18,7 +18,7 @@ Script cuja a função é adicionar, ativar e fazer controle de DG-ID(s) de refl
 
 *  [ TG + DG-ID ] slot 2
 
-*  TG 7777700  = off/retorno
+*  TG 7777700  = Off/retorno
 *  TG 7777701  = DG-ID 01
 *  TG 7777702  = DG-ID 02
 *  TG 7777750  = DG-ID 50
