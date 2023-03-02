@@ -2,7 +2,7 @@
 
 
 # pYSF3 C4FM multi streams DG-ID
-Script que ativa a função DG-ID para rádios DMR no PI-STAR, capacitando-os a usar os refletores pYSF3 c4fm multi streams por meio de TGs configurados. 
+Script cuja a função é adicionar, ativar e fazer controle de DG-ID(s) de refletores pYSF3 multi streams usando rádios DMR via PI-STAR; Todas as ações são por meio de TGs pré-configurados ou ssh. 
 
 
 # Install
@@ -18,6 +18,7 @@ Script que ativa a função DG-ID para rádios DMR no PI-STAR, capacitando-os a 
 
 *  [ TG + DG-ID ] slot 2
 
+*  TG 7777700  = off/retorno
 *  TG 7777701  = DG-ID 01
 *  TG 7777702  = DG-ID 02
 *  TG 7777750  = DG-ID 50
@@ -25,11 +26,14 @@ Script que ativa a função DG-ID para rádios DMR no PI-STAR, capacitando-os a 
 
 [ SSH ]
 
+* sudo dg-id 0  = Off/retorno
 * sudo dg-id 1  = DG-ID 01
 * sudo dg-id 2  = DG-ID 02
 * sudo dg-id 30 = DG-ID 30
 * sudo dg-id 88 = DG-ID 88
 
-# _________________________________________________________________________
+
+# ____________________________________________
 *  Uma portadora (PTT) de 2s para selecionar o dg-id em seguida retornar ao id do refletor para QSO.
 *  Obs: DMRGateway [ 70 + 77777 + dg-id ]
+
