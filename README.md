@@ -18,7 +18,7 @@ Script cuja a função é adicionar, ativar e fazer controle de DG-ID(s) de refl
 
 *  [ TG + DG-ID ] slot 2
 
-*  TG 7777700  = Off/retorno
+*  TG 7777700  = OFF/retorno
 *  TG 7777701  = DG-ID 01
 *  TG 7777702  = DG-ID 02
 *  TG 7777750  = DG-ID 50
@@ -26,7 +26,7 @@ Script cuja a função é adicionar, ativar e fazer controle de DG-ID(s) de refl
 
 [ SSH ]
 
-* sudo dg-id 0  = Off/retorno
+* sudo dg-id 0  = OFF/retorno
 * sudo dg-id 1  = DG-ID 01
 * sudo dg-id 2  = DG-ID 02
 * sudo dg-id 30 = DG-ID 30
