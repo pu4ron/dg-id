@@ -34,6 +34,6 @@ Script cuja a função é adicionar, ativar e fazer controle de DG-ID(s) de refl
 
 
 # ____________________________________________
-*  Uma portadora (PTT) de 2s para selecionar o dg-id em seguida retornar ao id do refletor para QSO.
+*  Uma portadora (PTT) de 2s para selecionar o dg-id e em seguida retorne ao id do refletor para QSO.
 *  Obs: DMRGateway [ 70 + 77777 + dg-id ]
 
